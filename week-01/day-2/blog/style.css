@@ -1,0 +1,74 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    }
+header{
+    background: #581b1b;
+    color: #1b6785;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 10px 150px;
+    }
+h1{ 
+    font-size: 40px; 
+    margin: 10px;
+    padding: 3px;
+    border: 3px solid;
+    } 
+h2{
+    font-size: 30px; 
+}
+h3{
+    font-size: 20px; 
+    margin:0;
+}
+p{
+    font-family: Calibri;
+    margin:0;
+}
+.newpost{
+    background: #1b6785;
+    color: #581b1b;
+    height: 320px;
+    width: auto;
+    margin: 0;
+    padding: 10px 150px;
+   }
+.smallbox{
+    background: white;
+    color: lightgrey;
+    height: 25px;
+    width: 150px;
+    margin: 5px 0px; 
+     
+        }
+.bigbox{
+    background: white;
+    height: 75px;
+    width: auto;
+    margin:5px 0px 10px;   
+   }
+.posts{
+    background: url(hashtag.jpg);
+    color:#581b1b;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 10px 150px;
+}
+.realtext{
+    color: black;
+}
+.shaddow{
+    color: lightgrey;
+}
+
+li{
+    list-style-type: none;  
+}

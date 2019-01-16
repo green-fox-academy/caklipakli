@@ -1,0 +1,86 @@
+html {
+    
+}
+
+body {
+    background: url(assets/topography.png);
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+}
+
+header {
+    background: #333333;
+    color: #ff0099;
+    height: 60px;
+    width: auto;
+    margin: 0;
+    padding: 10px 150px;
+    margin-bottom: 130px;
+                   
+}
+
+.button {
+    display: inline;
+    padding: 20px 40px;
+    text-decoration: underline; 
+    float: right;
+    text-transform: uppercase;
+    
+}
+
+main {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: auto;
+}
+middle {
+    padding:0;
+    width: 100%;
+    text-align: center;
+}
+.definitions {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: auto;
+    text-align: left;
+}
+
+h1 {
+  color: black;
+  font-size: 40px;
+  text-align: left;
+  font-weight: bold;
+}
+h2 {
+  font-family: "Book Antiqua";
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  width: 100%;
+  }
+
+h3 {
+  font-family: "Book Antiqua";
+  font-size: 30px;
+  color: #ff0099;
+  text-align: left;
+  }
+dt {
+  font-family: "Book Antiqua";
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+  text-align: left;   
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+p, dd {
+  font-family: "consolas";
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+    }
+dd{
+  padding-left: 0px;
+}
