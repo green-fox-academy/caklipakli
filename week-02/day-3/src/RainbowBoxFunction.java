@@ -17,19 +17,19 @@ public class RainbowBoxFunction {
 
         System.out.println("Enter size ");
         int w = scanner.nextInt();
-        int c = (int)(Math.random() * 100);
 
-        for (int i = 0; w < 320; i++) {
+        Color[] rainbow = {Color.RED, Color.GREEN, Color.BLUE, Color.yellow, Color.pink, Color.CYAN, Color.magenta};
 
-            drawSquareCenter(w, c, g);
-            w = w + 10;
-            c = (int)(Math.random() * 100);
+        for (int i = 0; i < rainbow.length; i++) {
+            drawSquareCenter(w, rainbow[i], g);
+            w = w - 30;
+
         }
 
     }
-    public static void drawSquareCenter(int w, int c, Graphics g){
-        g.setColor(new Color(c, c +10, c + 20 ));
-        g.drawRect(160-(w/2), 160-w/2, w, w);
+    public static void drawSquareCenter(int w, Color c, Graphics g){
+        g.setColor(c);
+        g.fillRect(160-(w/2), 160-w/2, w, w);
     }
 
     // Don't touch the code below
