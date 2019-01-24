@@ -26,7 +26,7 @@ public class StarryNight {
         int b = (int)(80+(Math.random()*40));
         Color someGray = new Color(r, gg, b);
         g.setColor(someGray);
-        
+
         int x = (int)(Math.random()*321);
         int y = (int)(Math.random()*321);
         g.fillRect(x, y, 2, 2);
