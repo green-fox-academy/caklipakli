@@ -22,7 +22,7 @@ public class TriangleWithParameters {
         int[][] triangleB = {{b, width}};
         int[][] triangleC = {{aSide / 2, c}};
 
-        int maxIterations = (width / aSide) - 1;
+        int maxIterations = (width / aSide);
 
         triangleDraw(triangleA, triangleB, triangleC, maxIterations, aSide, bSide, g);
 
@@ -30,17 +30,21 @@ public class TriangleWithParameters {
 
     public static void triangleDraw(int[][] a, int[][] b, int[][] c, int max, int aSide, int bSide, Graphics g){
 
+        int floor = max;
 
-        for (int i = 0; i < max; i++) {
+        for (int i = 0; i < floor; i++) {
 
             for (int j = 0; j < max; j++) {
 
-                g.drawLine(a[0][0] + j * aSide, a[0][1] - i * bSide, b[0][0] + j * aSide, b[0][1] - i * bSide);
-                g.drawLine(b[0][0] + j * aSide, b[0][1] - i * bSide, c[0][0] + j * aSide, c[0][1] - i * bSide);
-                g.drawLine(c[0][0] + j * aSide, c[0][1] - i * bSide, a[0][0] + j * aSide, a[0][1] - i * bSide);
-            }
+                g.drawLine(a[0][0] + j * aSide + i * aSide/2, a[0][1] - i * bSide,
+                           b[0][0] + j * aSide + i * aSide/2, b[0][1] - i * bSide);
+                g.drawLine(b[0][0] + j * aSide + i * aSide/2, b[0][1] - i * bSide,
+                           c[0][0] + j * aSide + i * aSide/2, c[0][1] - i * bSide);
+                g.drawLine(c[0][0] + j * aSide + i * aSide/2, c[0][1] - i * bSide,
+                           a[0][0] + j * aSide + i * aSide/2, a[0][1] - i * bSide);
 
-            max = max - 1;
+            }
+            max = max -1;
 
         }
     }
