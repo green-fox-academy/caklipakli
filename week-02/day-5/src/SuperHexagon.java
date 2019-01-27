@@ -9,15 +9,15 @@ public class SuperHexagon {
     public static void mainDraw(Graphics g) {
 
         int n = 6;
-        int a = 30;
+        int a = 20;
         int h = a*8/10;
+        int startX = 30;
+        int startY = 100;
 
-        int xPoints[] = {a, a+a, a+3*a/2, a+a, a, a-a/2};
-        int yPoints[] = {0, 0, h, h*2, h*2, h};
+        int xPoints[] = {startX, startX+a, startX+3*a/2, startX+a, startX, startX-a/2};
+        int yPoints[] = {startY, startY, startY + h, startY + h*2, startY + h*2, startY+ h};
 
         hexagon(g, xPoints, yPoints, n, h);
-
-
 
     }
 
