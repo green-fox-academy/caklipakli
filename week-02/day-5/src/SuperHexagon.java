@@ -10,18 +10,27 @@ public class SuperHexagon {
 
         int n = 6;
         int a = 30;
+        int h = a*8/10;
+
         int xPoints[] = {a, a+a, a+3*a/2, a+a, a, a-a/2};
-        int yPoints[] = {0, 0, a*8/10, a*8/5, a*8/5, a*8/10};
-        g.drawPolygon(xPoints, yPoints, n);
+        int yPoints[] = {0, 0, h, h*2, h*2, h};
+
+        hexagon(g, xPoints, yPoints, n, h);
 
 
 
     }
 
-    //public static void hexagon(Graphics g, int[] xPoints, int[] yPoints, int n){
+    public static void hexagon(Graphics g, int[] xPoints, int[] yPoints, int n, int h){
 
-      //  g.drawPolygon(xPoints, yPoints, n);
-    //}
+        for (int i = 0; i < 4; i++) {
+            g.drawPolygon(xPoints, yPoints, n);
+            for (int j = 0; j < yPoints.length; j++) {
+                yPoints[j] = yPoints[j] + 2*h;
+            }
+        }
+
+    }
 
 
 
