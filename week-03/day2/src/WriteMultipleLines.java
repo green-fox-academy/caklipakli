@@ -7,6 +7,7 @@
 // into the file and each line should read 'apple'
 // The function should not raise any errors if it could not write the file.
 
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -30,6 +31,7 @@ public class WriteMultipleLines {
         try {
             Path filePath = Paths.get(path);
             Files.write(filePath, content);
+            //Files.write(filePath, Files.readAllLines(filePath2));
 
         } catch (Exception e) {
             System.out.println("Sorry, I have no error messages");
