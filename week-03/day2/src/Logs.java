@@ -16,7 +16,9 @@ public class Logs {
 
         String path = "./log.txt";
 
-        System.out.println(IPAddress(ReadFileIntoAList(path)));
+        //System.out.println(IPAddress(ReadFileIntoAList(path)));
+
+        System.out.println("The GET / POST ratio: " + Ratio(ReadFileIntoAList(path)));
     }
 
     public static List<String> ReadFileIntoAList(String path) {
@@ -33,10 +35,10 @@ public class Logs {
 
         }
 
-        public static String[] IPAddress(List<String> lines){
+        public static String[] IPAddress(List<String> inputData){
 
             String[] splitArray = new String[3];
-            for (String line : lines) {
+            for (String line : inputData) {
                 splitArray = line.split("   ");
                 System.out.println(splitArray[1]);
             }
@@ -45,6 +47,24 @@ public class Logs {
                     ipAddress[i] = splitArray[1];
             }
             return ipAddress;
+        }
+
+        public static int Ratio(List<String> inputData){
+        int ratio;
+        int get =0;
+        int put =0;
+            for (int i = 0; i < inputData.size(); i++) {
+
+                if (inputData.contains("GET")){
+                    get = get +1;
+                }
+                else if (inputData.contains("PUT")){
+                    put = put +1;
+                }
+            }
+            ratio = get /put;
+
+        return ratio;
         }
 
 }
