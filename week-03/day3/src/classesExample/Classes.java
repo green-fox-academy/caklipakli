@@ -18,5 +18,9 @@ public class Classes {
         postIt3.text = "Superb!";
         postIt3.textColor = "Green";
 
+        PostIt postIt4 = new PostIt("Orange", "Is this working?", "red");
+
+        postIt3.proceeding();
+
     }
 }
