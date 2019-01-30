@@ -7,7 +7,6 @@ public class Tree {
     public static void main(String[] args) {
 
 
-        List<HashMap> trees = new List<HashMap<String, String[5]>>();
 
         String[] typeOfTree = new String[5];
         typeOfTree[0] = "Bükk";
