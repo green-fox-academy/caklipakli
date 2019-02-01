@@ -20,13 +20,9 @@ public class TrianglesNewFr {
         int startY = 5;
         int startX = WIDTH / 2;
 
-
-
             drawTriangle(g, startX, startY, a, h);
             drawTriangles(g, startX, startY, a, h);
 
-
-        
     }
 
     public static void drawTriangle(Graphics g, int startX, int startY, int a, int h){
@@ -39,12 +35,17 @@ public class TrianglesNewFr {
 
     public static void drawTriangles (Graphics g, int startX, int startY, int a, int h) {
 
-        if (a > 1) {
         drawTriangle(g, startX - a / 2, startY, a / 2, h / 2);
         drawTriangle(g, startX + a / 2, startY, a / 2, h / 2);
         drawTriangle(g, startX, startY + h, a / 2, h / 2);
 
+        
 
+        if (a > 1) {
+
+        drawTriangles(g, startX- a / 2, startY, a / 2, h /2);
+        drawTriangles(g, startX + a / 2, startY, a / 2, h / 2);
+        drawTriangles(g, startX, startY + h, a / 2, h / 2);
         }
 
         else {
