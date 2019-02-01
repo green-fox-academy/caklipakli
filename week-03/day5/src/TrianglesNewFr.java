@@ -9,19 +9,12 @@ public class TrianglesNewFr {
 
     public static void mainDraw(Graphics g) {
 
-        g.drawLine(5, 5, WIDTH-5, 5);
-        g.drawLine(WIDTH-5, 5, WIDTH / 2, HEIGHT-5);
-        g.drawLine(WIDTH / 2, HEIGHT-5, 5, 5);
-
-
-
         int a = (WIDTH-10) / 2;
         int h = (HEIGHT - 10) / 2;
         int startY = 5;
         int startX = WIDTH / 2;
 
-            drawTriangle(g, startX, startY, a, h);
-            drawTriangles(g, startX, startY, a, h);
+        drawTriangles(g, startX, startY, a, h);
 
     }
 
@@ -39,8 +32,6 @@ public class TrianglesNewFr {
         drawTriangle(g, startX + a / 2, startY, a / 2, h / 2);
         drawTriangle(g, startX, startY + h, a / 2, h / 2);
 
-        
-
         if (a > 1) {
 
         drawTriangles(g, startX- a / 2, startY, a / 2, h /2);
@@ -54,8 +45,8 @@ public class TrianglesNewFr {
     }
 
     // Don't touch the code below
-    static int WIDTH = 380;
-    static int HEIGHT = 320;
+    static int WIDTH = 760;
+    static int HEIGHT = 640;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
