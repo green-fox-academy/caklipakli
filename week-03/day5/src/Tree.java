@@ -10,30 +10,37 @@ public class Tree {
     public static void mainDraw(Graphics g) {
 
         int a = 50;
+        int b = 40;
         int startX = WIDTH / 2;
         int startY = HEIGHT;
 
         g.drawLine(startX, startY, startX, startY - a);
         startY = startY - a;
-        
-        drawLines(g, startX, startY, a);
-        drawShape(g, startX, startY, a);
+
+        drawLines(g, startX, startY, a, b);
+        drawShape(g, startX, startY, a, b);
 
     }
 
-    public static void drawLines(Graphics g, int startX, int startY, int a){
+    public static void drawLines(Graphics g, int startX, int startY, int a, int b){
 
         g.drawLine(startX, startY, startX, startY - a);
-        g.drawLine(startX, startY, startX - a / 2, startY - a);
-        g.drawLine(startX, startY, startX + a / 2, startY - a);
+        g.drawLine(startX, startY, startX - a / 3, startY - b);
+        g.drawLine(startX, startY, startX + a / 3, startY - b);
     }
-    public static void drawShape(Graphics g, int startX, int startY, int a) {
+    public static void drawShape(Graphics g, int startX, int startY, int a, int b) {
 
+        drawLines(g, startX, startY - a, a, b);
+        drawLines(g, startX - a / 3, startY - b, a, b);
+        drawLines(g, startX + a / 3, startY - b, a, b);
 
-        if ( startX > 0 ) {
-            drawLines(g, startX, startY - a, a);
-            drawLines(g, startX - a / 2, startY - a, a);
-            drawLines(g, startX + a / 2, startY -a, a);
+        
+
+        if ( startY > 5 ) {
+
+            drawShape(g, startX, startY - a, a, b);
+            drawShape(g, startX - a / 3, startY - b, a, b);
+            drawShape(g, startX + a / 3, startY - b, a, b);
         } else {
             return;
         }
