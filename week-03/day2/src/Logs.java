@@ -16,7 +16,7 @@ public class Logs {
 
         String path = "./log.txt";
 
-        //System.out.println(IPAddress(ReadFileIntoAList(path)));
+        System.out.println(IPAddress(ReadFileIntoAList(path)));
 
         System.out.println("The GET / POST ratio: " + Ratio(ReadFileIntoAList(path)));
     }
@@ -38,31 +38,41 @@ public class Logs {
         public static String[] IPAddress(List<String> inputData){
 
             String[] splitArray = new String[3];
-            for (String line : inputData) {
-                splitArray = line.split("   ");
-                System.out.println(splitArray[1]);
-            }
             String[] ipAddress = new String[1];
-            for (int i = 0; i < splitArray[1].length(); i++) {
+
+            try {
+                for (String line : inputData) {
+                    splitArray = line.split("   ");
+                    System.out.println(splitArray[1]);
+                }
+
+                for (int i = 0; i < splitArray[1].length(); i++) {
                     ipAddress[i] = splitArray[1];
+                }
+            } catch (Exception e) {
+                System.out.println("Unable to get IP address");
             }
             return ipAddress;
         }
 
         public static int Ratio(List<String> inputData){
-        int ratio;
+        int ratio =0;
         int get =0;
         int put =0;
+
+        try {
             for (int i = 0; i < inputData.size(); i++) {
 
-                if (inputData.contains("GET")){
-                    get = get +1;
-                }
-                else if (inputData.contains("PUT")){
-                    put = put +1;
+                if (inputData.get(i).contains("GET")) {
+                    get = get + 1;
+                } else if (inputData.get(i).contains("PUT")) {
+                    put = put + 1;
                 }
             }
-            ratio = get /put;
+            ratio = get / put;
+        } catch (Exception e) {
+                System.out.println("Sorry, sg wrong with the ratio");
+            }
 
         return ratio;
         }
