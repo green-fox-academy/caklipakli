@@ -4,6 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Person somebody = new Person();
+        Person someone = new Person("Jane", 20, true);
+
+        somebody.introduce();
+        someone.introduce();
+        someone.getGoal();
 
     }
 }

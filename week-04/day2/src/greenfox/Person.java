@@ -22,7 +22,7 @@ public class Person {
     }
 
 
-    public void introduce(String name, int age, boolean gender){
+    public void introduce(){
 
         if (gender) {
 
