@@ -15,5 +15,10 @@ public class Main {
 
         student1.introduce();
 
+        Mentor anyone = new Mentor();
+
+        anyone.introduce();
+        anyone.getGoal();
+
     }
 }
