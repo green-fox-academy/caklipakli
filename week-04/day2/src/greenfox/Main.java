@@ -20,5 +20,9 @@ public class Main {
         anyone.introduce();
         anyone.getGoal();
 
+        Sponsor representative = new Sponsor("Dirty Fred", 60, "male", "Balmoral");
+
+        representative.introduce();
+
     }
 }
