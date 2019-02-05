@@ -13,7 +13,7 @@ public class Student extends Person {
 
         }
 
-        public Student(String name, int age, boolean gender, String previousOrganization){
+        public Student(String name, int age, String gender, String previousOrganization){
 
             this.skippedDays = 0;
             this.name = name;
@@ -23,22 +23,15 @@ public class Student extends Person {
 
         }
 
-
+    @Override
     public void introduce(){
 
-        if (gender) {
-
-            System.out.println("Hi, I'm " + name + ", a " + age +
-                    " year old female from " + previousOrganization + " who skipped " + skippedDays + " days.");
-        } else {
-            System.out.println("Hi, I'm " + name + ", a " + age +
-                    " year old male  from " + previousOrganization + " who skipped " + skippedDays + " days.");
+        System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + "from "
+                + previousOrganization + " who skipped " + skippedDays + " days.");
         }
-    }
-
+    @Override
     public void getGoal(){
         System.out.println("Be a junior softwer developer!");
     }
-
 
 }
