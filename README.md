@@ -5,3 +5,4 @@ https://github.com/caklipakli/git-lesson-repository
 https://github.com/caklipakli/patchwork
 
 
+trial exam: https://github.com/caklipakli/exam-trial-basics
