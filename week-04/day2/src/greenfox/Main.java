@@ -11,5 +11,9 @@ public class Main {
         someone.introduce();
         someone.getGoal();
 
+        Student student1 = new Student();
+
+        student1.introduce();
+
     }
 }
