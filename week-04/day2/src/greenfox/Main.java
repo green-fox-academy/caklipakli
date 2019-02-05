@@ -12,6 +12,7 @@ public class Main {
         someone.getGoal();
 
         Student student1 = new Student();
+        Student student2 = new Student("Bob", 35, "male", "OTP");
 
         student1.introduce();
 
@@ -24,5 +25,10 @@ public class Main {
 
         representative.introduce();
 
+        Cohort megalotis = new Cohort("Megalotis");
+
+                megalotis.addStudent(student1);
+                megalotis.addMentor(anyone);
+                megalotis.info();
     }
 }
