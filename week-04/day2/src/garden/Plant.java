@@ -5,18 +5,21 @@ public class Plant {
     String color;
     String type;
     double currentAmountOfWater;
+    boolean needsWater;
 
     public Plant(String color, String type){
 
         this.color = color;
         this.type = type;
-        this.currentAmountOfWater = 10;
+        this.currentAmountOfWater = 0;
+        this.needsWater = true;
     }
     public Plant(String color, String type,int currentAmountOfWater){
 
         this.color = color;
         this.type = type;
         this.currentAmountOfWater = currentAmountOfWater;
+        this.needsWater = true;
     }
 
     public void wateringPlant(int water){
@@ -30,8 +33,31 @@ public class Plant {
         }
     }
 
+    public void  ifWateringNeeded(){
+
+        if ((type == "Tree") && (currentAmountOfWater < 10)){
+
+            needsWater = true;
+        } else {
+            needsWater = false;
+        }
+
+        if ((type == "Flower") && (currentAmountOfWater < 5)){
+
+            needsWater = true;
+        } else {
+            needsWater = false;
+        }
+    }
+
     public void info () {
-        System.out.println(color + " " + type + " " + currentAmountOfWater );
+
+        if (needsWater) {
+            System.out.println(color + " " + type + " needs water");
+        } else {
+        System.out.println(color + " " + type + " doesnt need water");
+        }
+        System.out.println();
     }
 
 }
