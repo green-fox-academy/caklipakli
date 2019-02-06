@@ -39,7 +39,7 @@ class Domino implements Comparable<Domino> {
             return -1;
         }
         return 0;
-    
+
     }
 
 }

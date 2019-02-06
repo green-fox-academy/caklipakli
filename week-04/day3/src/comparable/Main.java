@@ -23,5 +23,9 @@ public class Main {
 
         System.out.println(toDoList);
 
+        toDoList.sortThings();
+
+        System.out.println(toDoList);
+
     }
 }

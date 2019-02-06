@@ -15,13 +15,19 @@ public class Fleet {
         things.add(thing);
     }
 
+
+
+    public void sortThings(){
+        Collections.sort(things);
+    }
+
     @Override
     public String toString() {
         String result = "";
         for(int i = 0; i < things.size(); i++) {
             result += (i+1) + ". " + things.get(i) + "\n";
         }
-        Collections.sort(things);
+
         return result;
     }
 
