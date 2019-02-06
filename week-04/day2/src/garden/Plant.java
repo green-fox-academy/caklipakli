@@ -57,7 +57,6 @@ public class Plant {
         } else {
         System.out.println(color + " " + type + " doesnt need water");
         }
-        System.out.println();
     }
 
 }

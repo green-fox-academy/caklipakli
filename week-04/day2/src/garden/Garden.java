@@ -24,6 +24,10 @@ public class Garden {
     public void wateringTheGarden(int water) {
         System.out.println("Watering with " + water);
 
+        for (int i = 0; i < garden.size(); i++) {
+            garden.get(i).ifWateringNeeded();
+            }
+
         int divide = 0;
         for (int i = 0; i < garden.size(); i++) {
             if (garden.get(i).needsWater) {
