@@ -40,9 +40,12 @@ public class Student extends Person implements Cloneable {
         this.skippedDays = skippedDays + numberOfDays;
     }
 
-    public Student clone(Student toBeCloned){
+    @Override
+    public Student clone(){
 
-        return toBeCloned;
+        Student clonedStudent = new Student(this.name, this.age, this.gender, this.previousOrganization);
+
+        return clonedStudent;
 
     }
 }

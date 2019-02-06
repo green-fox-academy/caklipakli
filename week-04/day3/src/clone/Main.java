@@ -6,7 +6,7 @@ public class Main {
 
         Student student1 = new Student("John", 20, "male", "BME");
 
-        Student johnTheClone = student1.clone(student1);
+        Student johnTheClone = student1.clone();
 
         johnTheClone.introduce();
 
