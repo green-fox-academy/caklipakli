@@ -22,14 +22,6 @@ public class SumTest {
     }
 
     @Test
-    public void sumOfElements_NullList_Test () {
-
-        Sum newSum = new Sum();
-        List<Integer> nullInitials = new ArrayList<>();
-        assertEquals(0, newSum.sumOfElements(nullInitials));
-    }
-
-    @Test
     public void sumOfElements_SomeDifferentValue_Test () {
 
         Sum newSum = new Sum();
@@ -40,7 +32,7 @@ public class SumTest {
 
 
     @Test (expected = NullPointerException.class)
-    public void sum_NullValue_ReturnsThatValue() {
+    public void sumOfElements_NullList_ReturnsThatValue() {
         Sum newSum = new Sum();
         ArrayList<Integer> input = new ArrayList<>(Arrays.asList(null));
         newSum.sumOfElements(input);
