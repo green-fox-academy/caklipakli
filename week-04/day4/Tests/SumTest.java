@@ -13,13 +13,36 @@ import static org.junit.Assert.*;
 public class SumTest {
 
     @Test
-    public void sumOfElements_Test (){
+    public void sumOfElements_0values_Test (){
 
-        Integer[] numberList = new Integer[]{9, -4, 3, -4};
-        List<Integer> initials = Arrays.asList(numberList);
+        Integer[] numberList = new Integer[]{0, 0, 0, -0};
+        List<Integer> initials2 = Arrays.asList(numberList);
+        Sum newSum = new Sum();
+        assertEquals(0, newSum.sumOfElements(initials2));
+    }
 
+    @Test
+    public void sumOfElements_NullList_Test () {
 
         Sum newSum = new Sum();
+        List<Integer> nullInitials = new ArrayList<>();
+        assertEquals(0, newSum.sumOfElements(nullInitials));
+    }
+
+    @Test
+    public void sumOfElements_SomeDifferentValue_Test () {
+
+        Sum newSum = new Sum();
+        Integer[] numberList = new Integer[]{9, -4, 3, -4};
+        List<Integer> initials = Arrays.asList(numberList);
         assertEquals(4, newSum.sumOfElements(initials));
+    }
+
+
+    @Test (expected = NullPointerException.class)
+    public void sum_NullValue_ReturnsThatValue() {
+        Sum newSum = new Sum();
+        ArrayList<Integer> input = new ArrayList<>(Arrays.asList(null));
+        newSum.sumOfElements(input);
     }
 }
