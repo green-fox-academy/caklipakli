@@ -22,7 +22,6 @@ public class Reservation implements Reservationy{
         booking.fillReservations(number);
         booking.showBookings();
 
-
     }
 
     public void fillReservations(int number){
@@ -33,21 +32,6 @@ public class Reservation implements Reservationy{
             addCode(code);
         }
     }
-
-    /*public String randomCode(){
-
-        String code = "";
-        String baseCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-        for (int i = 0; i < 8; i++) {
-
-            int index = (int)(1 +(Math.random()* 35));
-            code += baseCharacters.charAt(index);
-
-        }
-
-        return code;
-    }*/
 
     public int getnOfResevations(){
         return nOfResevations;
