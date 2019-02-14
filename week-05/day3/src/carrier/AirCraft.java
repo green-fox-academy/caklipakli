@@ -8,9 +8,26 @@ public abstract class AirCraft {
     int allDamage;
     String type;
 
+    public AirCraft(int baseDamage, int currentAmmo, String type, int maxAmmo){
+
+        this.baseDamage = baseDamage;
+        this.currentAmmo = currentAmmo;
+        this.type = type;
+        this.maxAmmo = maxAmmo;
+    }
 
 
-    public abstract int reFill(int parameter);
+    public int reFill(int parameter){
+
+        if (currentAmmo + parameter < maxAmmo) {
+                currentAmmo = currentAmmo + parameter;
+                return 0;
+
+        } else {
+            currentAmmo = maxAmmo;
+            return parameter - (maxAmmo - currentAmmo);
+        }
+    }
 
     public abstract boolean isPriority();
 
@@ -19,17 +36,13 @@ public abstract class AirCraft {
     }
 
     public String getStatus() {
-        return toString();
-    }
-
-    public String toString() {
-
         return "Type " + type + ", Ammo: " + currentAmmo + ", base damage: "+ baseDamage + ", all damage: " + allDamage;
     }
 
-    public int fight() {
+
+    public void fight() {
         currentAmmo = 0;
-        return baseDamage * maxAmmo;
+        allDamage = baseDamage * maxAmmo;
     }
 
 }
