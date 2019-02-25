@@ -16,10 +16,10 @@ public class StreamWithStrings {
                 .forEach(c -> System.out.print((char) c + " "));
 
 
-    // Write a Stream Expression to find the strings which starts with a given letter(as parameter), in the following list:
+        // Write a Stream Expression to find the strings which starts with a given letter(as parameter), in the following list:
 
         System.out.println();
-        
+
         List<String> cities = Arrays.asList("ROME", "LONDON", "NAIROBI",
                 "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS");
 
@@ -28,9 +28,17 @@ public class StreamWithStrings {
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
-        }
 
+        // Write a Stream Expression to concatenate a Character list to a string!
 
+        List<Character> charList = Arrays.asList('v','a','l','a','m','i');
 
+        String newString = charList.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining());
+
+        System.out.println(newString);
+
+    }
 }
 
