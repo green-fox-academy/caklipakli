@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -38,6 +39,21 @@ public class StreamWithStrings {
                 .collect(Collectors.joining());
 
         System.out.println(newString);
+
+        // Write a Stream Expression to find the frequency of characters in a given string!
+
+        String testString = "elkelkápsztástalaníthatatlanítottátok";
+        IntStream charStream = testString.chars();
+        Map<Character, Long> charFrequency = charStream
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+
+        charFrequency.forEach((k, v) -> System.out.println(k + ":" + v));
+
+
+
+
+
 
     }
 }
