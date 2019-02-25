@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class StreamWithStrings {
@@ -12,7 +15,22 @@ public class StreamWithStrings {
                 .filter(c -> Character.isUpperCase(c))
                 .forEach(c -> System.out.print((char) c + " "));
 
+
+    // Write a Stream Expression to find the strings which starts with a given letter(as parameter), in the following list:
+
+        System.out.println();
+        
+        List<String> cities = Arrays.asList("ROME", "LONDON", "NAIROBI",
+                "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS");
+
+        String a = "A";
+        cities.stream().filter(city -> city.startsWith(a))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
         }
+
+
 
 }
 
