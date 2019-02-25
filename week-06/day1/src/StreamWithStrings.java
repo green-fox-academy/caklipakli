@@ -49,12 +49,6 @@ public class StreamWithStrings {
                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
         charFrequency.forEach((k, v) -> System.out.println(k + ":" + v));
-
-
-
-
-
-
     }
 }
 
