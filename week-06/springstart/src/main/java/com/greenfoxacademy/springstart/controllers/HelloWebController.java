@@ -12,7 +12,6 @@ public class HelloWebController {
 
     private static AtomicLong id = new AtomicLong(1);
 
-
     @RequestMapping("/web/greeting")
     public String greeting(Model model, @RequestParam String name) {
         model.addAttribute("name", name);
