@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Garden {
 
-    List<Plant> garden = new ArrayList<Plant>();
+    List<Plant> garden = new ArrayList<>();
 
     public Garden(){
 

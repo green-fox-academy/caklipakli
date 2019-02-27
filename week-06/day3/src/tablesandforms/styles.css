@@ -1,0 +1,52 @@
+html {
+    background-color: white;
+}
+
+
+body {
+
+    font-family: "Calibri";
+    font-size: 40px;
+}
+
+div{
+    height: 70%;
+    width: 70%;
+    padding: 40px;
+    background-color: dodgerblue;
+}
+
+
+table{
+    border-radius: 10px;
+    border: hidden;
+
+
+    background-color: white;
+    border-collapse: collapse;
+}
+
+table thead{
+
+    background-color: black;
+    color: lightgray;
+}
+
+th{
+    font-weight: normal;
+    padding: 20px 200px 20px 20px;
+}
+
+td {
+
+    border: solid 2px gray;
+    padding: 20px 200px 20px 20px;
+    font-size: 30px;
+    color: gray;
+}
+
+
+tr:nth-child(even){
+
+    background-color: lightgray;
+}
