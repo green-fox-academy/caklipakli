@@ -1,5 +1,6 @@
 body{
-    font-family: "Bauhaus 93";
+    font-family: "Century Schoolbook";
+    font-weight: normal;
 }
 
 h1{
@@ -16,5 +17,12 @@ thead{
     font-size: 25px;
     border-bottom: maroon solid 2px;
     font-weight: normal;
+}
 
+header.filters{
+    display: inline;
+}
+
+input{
+    display: inline;
 }

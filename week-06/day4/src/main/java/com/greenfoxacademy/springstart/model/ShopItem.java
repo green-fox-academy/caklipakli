@@ -1,6 +1,6 @@
 package com.greenfoxacademy.springstart.model;
 
-public class ShopItem {
+public class ShopItem implements Comparable<ShopItem>{
 
     private String name;
     private String description;
@@ -29,5 +29,11 @@ public class ShopItem {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public int compareTo(ShopItem o) {
+
+        return this.price - o.getPrice();
     }
 }

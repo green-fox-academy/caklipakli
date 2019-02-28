@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+
+    <title>webshop stock average</title>
+</head>
+
+<body>
+<header>
+    <h1>My shop</h1>
+    <div class ="filters">
+        <form method ="GET" action="/webshop/only-available">
+            <input type="submit" value="Only available" name = "available">
+        </form>
+
+        <form method ="GET" action="/webshop/cheapest">
+            <input type="submit" value="Cheapest first" name = "cheapest">
+        </form>
+
+        <form method ="GET" action="/webshop/nike">
+            <input type="submit" value="Contains nike" name = "nike">
+        </form>
+
+        <form method ="GET" action="/webshop/stock">
+            <input type="submit" value="Average stock" name = "stock">
+        </form>
+
+        <form method ="GET" action="/webshop/expensive">
+            <input type="submit" value="Most expensive available" name = "expensive">
+        </form>
+    </div>
+</header>
+
+<div class ="search">
+    <p>Search for</p>
+    <input type="text" placeholder="...something like unicorn" name = "searchText">
+    <input type="submit" value="Search" name = "search">
+</div>
+
+<main>
+    <h2>Average stock:</h2>
+    <h2 th:text="${average}"></h2>
+</main>
+
+</body>
+</html>
