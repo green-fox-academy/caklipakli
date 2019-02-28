@@ -1,0 +1,20 @@
+body{
+    font-family: "Bauhaus 93";
+}
+
+h1{
+    background: darkkhaki;
+    color: maroon;
+    font-size: 45px;
+}
+
+thead{
+    margin: 20px;
+    padding: 10px;
+    background: maroon;
+    color: darkkhaki;
+    font-size: 25px;
+    border-bottom: maroon solid 2px;
+    font-weight: normal;
+
+}

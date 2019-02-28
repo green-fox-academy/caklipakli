@@ -26,12 +26,35 @@
             Contains nike
         </button>
         <button>
-            Avarage stock
+            Average stock
         </button>
         <button>
             Most expensive available
         </button>
     </header>
+
+    <div class ="search">
+        <p>Search for</p>
+        <input type="text" placeholder="...something like unicorn" name = "searchText">
+        <input type="submit" value="Search" name = "search">
+    </div>
+    <main>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+
+            </thead>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.getName()}"></td>
+                <td th:text="${item.getDescription()}"></td>
+                <td th:text="${item.getPrice()}"></td>
+                <td th:text="${item.getQuantity()}"></td>
+            </tr>
+        </table>
+    </main>
 
 </body>
 </html>
