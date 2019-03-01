@@ -1,28 +1,89 @@
-body{
-    font-family: "Century Schoolbook";
-    font-weight: normal;
+html{
+    background: lightgray;
+    height: 90%;
+    width: 90%;
 }
 
+body{
+    margin: auto;
+    padding: 20px;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+    height: 90%;
+    width: 90%;
+    background: lightgoldenrodyellow;
+    border: darkgray 1px solid;
+
+}
+header{
+
+}
 h1{
-    background: darkkhaki;
+    margin: auto;
+    background: lightgray;
     color: maroon;
     font-size: 45px;
+    font-weight: bold;
+    border-bottom: maroon solid 2px;
+    padding: 0 0 5px 10px;
+}
+
+
+table{
+    margin: auto;
+    width: 100%;
+    padding: 5px 0 0 0;
+    border: darkgray solid 1px;
 }
 
 thead{
+    position: center;
     margin: 20px;
     padding: 10px;
-    background: maroon;
-    color: darkkhaki;
-    font-size: 25px;
-    border-bottom: maroon solid 2px;
+    background: dodgerblue;
+    color: lightgray;
+    font-size: 20px;
     font-weight: normal;
 }
-
-header.filters{
-    display: inline;
+th{
+    padding: 5px;
+}
+td{
+    padding: 5px;
 }
 
-input{
-    display: inline;
+td.number{
+    text-align: right;
 }
+
+
+div.search{
+    display: block;
+    padding: 0 0 0 10px;
+    background: lightgray;
+}
+
+h2{
+    margin: 0px;
+    color: maroon;
+    font-size: 15px;
+    display: inline-block;
+}
+
+form {
+    margin: auto;
+    display: inline-block;
+}
+
+input[type=submit]{
+
+    background: maroon;
+    color: darkkhaki;
+    margin: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-size: 12px;
+
+}
+

@@ -5,8 +5,10 @@ import com.greenfoxacademy.springstart.model.ShopItem;
 import com.greenfoxacademy.springstart.model.ShopItemsList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +93,7 @@ public class Webshop {
         return "averageStock";
     }
 
-    @RequestMapping(value ="/webshop/search")
+    @PostMapping(value ="/webshop/search")
     public String search(Model model, @RequestParam("key") String key){
 
         List<ShopItem> results = items.getShopItemsList().stream()

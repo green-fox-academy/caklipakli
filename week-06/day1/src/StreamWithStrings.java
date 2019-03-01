@@ -44,7 +44,8 @@ public class StreamWithStrings {
 
         String testString = "elkelkápsztástalaníthatatlanítottátok";
         IntStream charStream = testString.chars();
-        Map<Character, Long> charFrequency = charStream
+
+        Map<Character, Long> charFrequency = testString.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
