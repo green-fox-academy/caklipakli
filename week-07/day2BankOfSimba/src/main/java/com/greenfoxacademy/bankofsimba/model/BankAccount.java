@@ -37,4 +37,8 @@ public class BankAccount {
     public String getCurrency() {
         return currency;
     }
+
+    public boolean isKing() {
+        return isKing;
+    }
 }

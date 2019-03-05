@@ -18,7 +18,7 @@
 
     </thead>
     <tbody>
-    <tr th:each="account : ${accountsList}">
+    <tr th:each="account : ${accountsList}" th:if="${account.isKing}" th:background="yellow">
         <td th:text="${account.name}"></td>
         <td th:text="${account.animalType}"></td>
         <td class = "number" th:text="${account.getFormattedBalance()}"></td>

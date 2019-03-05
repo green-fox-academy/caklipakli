@@ -18,7 +18,7 @@ public class BankAccountController {
     @RequestMapping("/show")
     public String show(Model model){
 
-        BankAccount accountSimba = new BankAccount("Simba", 2000.5687f, "lion", "zebra");
+        BankAccount accountSimba = new BankAccount("Simba", 2000.5687f, "lion", "zebra", true);
         model.addAttribute("account", accountSimba);
         return "index";
     }
