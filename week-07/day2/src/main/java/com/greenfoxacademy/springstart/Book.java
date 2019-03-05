@@ -1,3 +1,5 @@
+package com.greenfoxacademy.springstart;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,11 +19,19 @@ public class Book {
         this.releaseYear = releaseYear;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
     public String getAuthor() {
         return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getReleaseYear() {
+        return releaseYear;
     }
 }

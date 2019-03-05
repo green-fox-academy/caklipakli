@@ -1,3 +1,5 @@
+package com.greenfoxacademy.springstart;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +18,11 @@ public class BookController {
         books.add(new Book("Do Androids Dream of Electric Sheep?", "Philip K. Dick", 1968));
     }
 
-    @RequestMapping(path = "/books", method = RequestMethod.GET)
+    /*@RequestMapping(path = "/books", method = RequestMethod.GET)
     public String showBooks(Model model) {
         model.addAttribute("books", books);
         return "index";
-    }
+    }*/
 
     @RequestMapping(path = "/books", method = RequestMethod.GET)
     public String queryBooks(Model model, @RequestParam(name = "author", required = false) String author) {
