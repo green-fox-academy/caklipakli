@@ -14,14 +14,16 @@
     <th>Animal type</th>
     <th>Balance</th>
     <th>Currency</th>
+    <th>Index</th>
 
     </thead>
     <tbody>
-    <tr th:each="item : ${accountsList}">
-        <td th:text="${}"></td>
-        <td th:text="${}"></td>
-        <td class = "number" th:text="${}"></td>
-        <td class = "number" th:text="${}"></td>
+    <tr th:each="account : ${accountsList}">
+        <td th:text="${account.name}"></td>
+        <td th:text="${account.animalType}"></td>
+        <td class = "number" th:text="${account.getFormattedBalance()}"></td>
+        <td class = "number" th:text="${account.currency}"></td>
+        <td class = "number" th:text="${accountStat.index}"></td>
     </tr>
     </tbody>
 </table>
