@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <th>Name</th>
+    <th>Animal type</th>
+    <th>Balance</th>
+    <th>Currency</th>
+
+    </thead>
+    <tbody>
+    <tr th:each="item : ${accountsList}">
+        <td th:text="${}"></td>
+        <td th:text="${}"></td>
+        <td class = "number" th:text="${}"></td>
+        <td class = "number" th:text="${}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
