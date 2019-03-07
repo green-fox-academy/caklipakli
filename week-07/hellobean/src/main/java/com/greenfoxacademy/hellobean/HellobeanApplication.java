@@ -8,11 +8,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class HellobeanApplication implements CommandLineRunner {
 
-    private Printer printer;
+    private MyColor color;
 
-    @Autowired
+    /*@Autowired
     HellobeanApplication(Printer printer){
         this.printer = printer;
+    }*/
+
+    @Autowired
+    HellobeanApplication(MyColor color){
+        this.color = color;
     }
 
     public static void main(String[] args) {
@@ -21,6 +26,7 @@ public class HellobeanApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        printer.log(" HELLOBELLOTHERE");
+
+        color.printColor();
     }
 }
