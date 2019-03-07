@@ -38,4 +38,11 @@ public class UsefulController {
         return "email";
     }
 
+    @PostMapping(value="useful/encoder")
+    public String encoder(Model model, @RequestParam("text") String text, @RequestParam("param") int param){
+
+        model.addAttribute("encoded", service.caesar(text, param));
+        return "encoder";
+    }
+
 }

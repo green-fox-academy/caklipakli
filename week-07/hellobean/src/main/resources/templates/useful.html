@@ -7,19 +7,22 @@
 </head>
 <body>
     <h1>Useful things</h1>
-    <ul>
+    <ol>
         <li><a href="/useful/colored">Colored background</a></li>
+        <a>Validate an e-mail</a>
         <li><form method="POST" action="/useful/email">
             <input type="text" placeholder="type your e-mail" name = "email">
             <input type="submit" value="Send" name = "search">
             </form>
         </li>
+        <a>This is a text encoder for you:</a>
         <li><form method="POST" action="/useful/encoder">
-            <input type="text" placeholder="type the text" name = "text">
-            <input type="number" name = "param">
+            <label for name="text">Type the text to encode</label>
+            <input type="text" name = "text">
+            <input type="number" name = "param" placeholder = "parameter">
             <input type="submit" value="Send" name = "search">
             </form>
         </li>
-    </ul>
+    </ol>
 </body>
 </html>
