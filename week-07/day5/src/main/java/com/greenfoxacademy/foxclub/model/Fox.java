@@ -1,19 +1,18 @@
-package com.greenfoxacademy.foxclub;
-
-import java.util.List;
+package com.greenfoxacademy.foxclub.model;
 
 public class Fox {
 
     private String name;
     private String food;
     private String drink;
-    private List<String> tricks;
+    private Tricks tricks;
 
     public Fox(String name){
         this.name= name;
+        this.drink= "kóla";
     }
 
-    public Fox(String name, String food, String drink, List<String>tricks){
+    public Fox(String name, String food, String drink, Tricks tricks){
         this.name = name;
         this.food = food;
         this.drink = drink;
@@ -44,15 +43,15 @@ public class Fox {
         this.drink = drink;
     }
 
-    public List<String> getTricks() {
+    public Tricks getTricks() {
         return tricks;
     }
 
-    public void setTricks(List<String> tricks) {
+    public void setTricks(Tricks tricks) {
         this.tricks = tricks;
     }
 
     public void addTrick(String trick){
-        tricks.add(trick);
+        tricks.addTricktoTricks(trick);
     }
 }

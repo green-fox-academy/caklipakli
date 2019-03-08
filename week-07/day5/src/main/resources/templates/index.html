@@ -8,11 +8,19 @@
 <body>
 
 <li><a href="">Information</a></li>
+<li><a href="">Nutrition store</a></li>
+<li><a href="">Trick center</a></li>
+<li><a href="">Action history</a></li>
+<li><a href="">Create</a></li>
+
 <img src="greenfox_image.png" alt="The green fox">
-<p th:text="'This is ' @{name}+'. Currently living on '+ @{food} + ' and ' + @{drink}+'. He knows '+@{tricks}+' tricks.'"></p>
+<div th:object="${fox}">
+    <p th:text="'This is ' + ${fox.name}+'. Currently living on '+ ${fox.food} + ' and ' + ${fox.drink}+'. He knows '+${fox.tricks.tricks.size()}+' tricks.'"></p>
+</div>
 <h1>Known tricks</h1>
-<li>write HTML</li>
-<li>code in Java</li>
+    <ul th:each="tricks:${fox.tricks.tricks}">
+        <li th:text="${tricks}"></li>
+    </ul>
 
 </body>
 </html>

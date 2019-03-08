@@ -1,4 +1,4 @@
-package com.greenfoxacademy.foxclub;
+package com.greenfoxacademy.foxclub.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,5 +20,4 @@ public class Tricks {
     public void addTricktoTricks(String trick){
         tricks.add(trick);
     }
-
 }
