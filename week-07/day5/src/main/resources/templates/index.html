@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
 
 <li><a href="">Information</a></li>
 <img src="greenfox_image.png" alt="The green fox">
-<p>This is Mr.Fox. Currently living on pizza and lemonade. He knows two tricks.</p>
+<p th:text="'This is ' @{name}+'. Currently living on '+ @{food} + ' and ' + @{drink}+'. He knows '+@{tricks}+' tricks.'"></p>
 <h1>Known tricks</h1>
 <li>write HTML</li>
 <li>code in Java</li>
