@@ -1,8 +1,5 @@
 
-.red{
-    color: red;
-}
-
-.green{
-    color:green;
+body{
+    background-color: lightgray;
+    font-family: Cambria;
 }
