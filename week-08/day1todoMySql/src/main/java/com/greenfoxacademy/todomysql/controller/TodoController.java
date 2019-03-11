@@ -44,4 +44,17 @@ import org.springframework.web.bind.annotation.*;
             repository.deleteById(id);
             return "redirect:/todo/list";
         }
+
+
+        @RequestMapping(path ="/{id}/edit", method=RequestMethod.GET)
+        public String todoEditForm(Model model, @PathVariable("id") long id) {
+            model.addAttribute("todo",repository.findById(id).get());
+            return "redirect:/todo/edit";
+        }
+
+        @RequestMapping(path ="/{id}/edit", method=RequestMethod.POST)
+        public String todoEdit(@ModelAttribute(name="todo") Todo todo) {
+            repository.save(todo);
+            return "redirect:/todo/list";
+    }
 }
