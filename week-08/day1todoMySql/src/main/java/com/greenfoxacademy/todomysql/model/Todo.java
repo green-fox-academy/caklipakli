@@ -1,4 +1,4 @@
-package com.greenfoxacademy.todolist.model;
+package com.greenfoxacademy.todomysql.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
