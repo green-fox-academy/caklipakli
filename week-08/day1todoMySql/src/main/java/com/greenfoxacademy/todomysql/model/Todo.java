@@ -1,16 +1,13 @@
 package com.greenfoxacademy.todomysql.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "todos")
 public class Todo {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String title;
     private boolean urgent;
@@ -28,6 +25,13 @@ public class Todo {
 
     }
 
+
+    public Todo(String title, boolean urgent, boolean done){
+        this.title = title;
+        this.urgent = urgent;
+        this.done = done;
+
+    }
     public String getTitle() {
         return title;
     }
