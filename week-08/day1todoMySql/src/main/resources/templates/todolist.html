@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>Todo list</title>
     <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-<h1>Todos for today</h1>
-<h3><a th:href="@{/todo/add}">Add new todo</a></h3>
-    <table>
+<body bgcolor="#add8e6">
+    <header class="container">
+        <h1 class="text-center">Todos for today</h1>
+        <h3><a th:href="@{/todo/add}">Add new todo</a></h3>
+    </header>
+    <div class="container">
+    <table class="table table-striped">
         <thead>
             <th>Id</th>
             <th>Action</th>
@@ -17,17 +22,19 @@
             <th>Delete</th>
             <th>Edit</th>
         </thead>
+        <tbody class="table table-hover">
         <tr th:each="todo:${todos}">
             <td th:text="${todo.id}"></td>
             <td th:text="${todo.title}"></td>
             <td th:text="${todo.urgent}"></td>
             <td th:text="${todo.done}"></td>
-            <td><a th:href="@{'/todo/'+ ${todo.id} + '/delete'}">Delete</a></td>
-            <td><a th:href="@{'/todo/'+ ${todo.id} + '/edit'}">Edit</a></td>
+            <td><a th:href="@{'/todo/'+ ${todo.id} + '/delete'}" class="btn btn-danger">Delete</a></td>
+            <td><a th:href="@{'/todo/'+ ${todo.id} + '/edit'}" class="btn btn-primary">Edit</a></td>
         </tr>
-
+        </tbody>
     </table>
-
-
+    </div>
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
