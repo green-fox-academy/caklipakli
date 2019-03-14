@@ -9,7 +9,7 @@
 </head>
 <body>
 <form action="#" th:action="@{/reddit/add}" th:object="${reddit}" method="post">
-    <label for="title">Add a post</label>
+    <label for="title">Submit a new post</label>
     <input type="text" id="title" name="title" th:field="*{post}" required>
 
     <input type="submit" value="Add"/>

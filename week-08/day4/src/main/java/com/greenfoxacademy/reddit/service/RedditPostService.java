@@ -4,6 +4,7 @@ import com.greenfoxacademy.reddit.model.RedditPost;
 import com.greenfoxacademy.reddit.repository.RedditPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 @Service
 public class RedditPostService {
@@ -11,11 +12,10 @@ public class RedditPostService {
     @Autowired
     RedditPostRepository postRepository;
 
-    public void addRedditPost(RedditPost post){
-        postRepository.save(post);
-    }
+    public void upVote(Model model, Long id){
+        long score = postRepository.findById(id).get().getScore();
+        postRepository.findById(id).get().setScore(score + 1);
+        postRepository.save(postRepository.findById(id).get());
 
-    public RedditPost getRedditPost(long id){
-        return postRepository.findById(id).get();
     }
 }

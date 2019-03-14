@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,14 +29,20 @@ public class RedditPostController {
 
 
     @RequestMapping(path="/add", method= RequestMethod.GET)
-    public String redditAdd(Model model){
+    public String redditAddForm(Model model){
         model.addAttribute("reddit", new RedditPost());
         return "add";
     }
 
     @RequestMapping(path="/add", method=RequestMethod.POST)
-    public String todoAdd(@ModelAttribute(name="reddit") RedditPost post){
+    public String redditAdd(@ModelAttribute(name="reddit") RedditPost post){
         postRepository.save(post);
+        return "redirect:/reddit/list";
+    }
+
+    @RequestMapping(path="/upvote/{id}", method = RequestMethod.GET)
+    public String upVoteReddit(@PathVariable "id", long id ){
+        postRepository.
         return "redirect:/reddit/list";
     }
 

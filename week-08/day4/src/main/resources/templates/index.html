@@ -20,7 +20,7 @@
         <tbody class="table table-hover">
         <tr th:each="post:${posts}">
             <td th:text="${post.score}"></td>
-            <td>+</td>
+            <td><a th:href="'/upvote/'+${post.id}">+</a></td>
             <td>-</td>
             <td th:text="${post.post}"></td>
         </tr>
