@@ -8,14 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<h1 class="text-center">Trending posts</h1>
-<div class="container">
+    <header class="container">
+        <h1 class="text-center">Trending posts</h1>
+    </header>
+    <div class="container">
     <table class="table table-striped">
         <thead>
         <th>Score</th>
         <th>Upvote</th>
         <th>Downvote</th>
         <th>Posts</th>
+        <th>Posted</th>
         </thead>
         <tbody class="table table-hover">
         <tr th:each="post:${posts}">
@@ -23,6 +26,7 @@
             <td><a th:href="'/reddit/'+${post.id}+'/upvote'">+</a></td>
             <td><a th:href="'/reddit/'+${post.id}+'/downvote'">-</a></td>
             <td th:text="${post.post}"></td>
+            <td th:text="${post.date}"></td>
         </tr>
         </tbody>
     </table>

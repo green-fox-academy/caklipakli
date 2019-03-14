@@ -1,9 +1,6 @@
 package com.greenfoxacademy.reddit.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -14,6 +11,8 @@ public class RedditPost{
     private String post;
     private long score;
     private Date date = new Date();
+    @ManyToOne(cascade=CascadeType.ALL)
+    private User user;
 
     public RedditPost(){
         this.score = 100;
