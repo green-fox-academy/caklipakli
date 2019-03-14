@@ -15,8 +15,13 @@ public class RedditPost {
     private long score;
     private Date date = new Date();
 
+    public RedditPost(){
+        this.score = 100;
+    }
+
     public RedditPost(String post){
         this.post = post;
+        this.score =100;
 
     }
 
