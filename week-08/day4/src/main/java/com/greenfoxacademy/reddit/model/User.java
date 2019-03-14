@@ -1,6 +1,7 @@
 package com.greenfoxacademy.reddit.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -11,7 +12,7 @@ public class User {
     private String nick;
     private String emil;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private RedditPost post;
+    private List<RedditPost> posts;
 
     public User(){
 
@@ -19,6 +20,14 @@ public class User {
 
     public User(String nick){
         this.nick = nick;
+    }
+
+    public List<RedditPost> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<RedditPost> posts) {
+        this.posts = posts;
     }
 }
 

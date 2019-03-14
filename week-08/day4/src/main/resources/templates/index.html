@@ -26,6 +26,7 @@
             <td><a th:href="'/reddit/'+${post.id}+'/upvote'">+</a></td>
             <td><a th:href="'/reddit/'+${post.id}+'/downvote'">-</a></td>
             <td th:text="${post.post}"></td>
+            <td th:text="${post.user"></td>
             <td th:text="${post.date}"></td>
         </tr>
         </tbody>

@@ -11,18 +11,18 @@ public class RedditPost{
     private String post;
     private long score;
     private Date date = new Date();
-    @ManyToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade=CascadeType.ALL)
     private User user;
 
     public RedditPost(){
         this.score = 100;
     }
 
-    public RedditPost(String post){
+    /*public RedditPost(String post){
         this.post = post;
         this.score =100;
 
-    }
+    }*/
 
     public long getId() {
         return id;
@@ -46,5 +46,13 @@ public class RedditPost{
 
     public Date getDate() {
         return date;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
