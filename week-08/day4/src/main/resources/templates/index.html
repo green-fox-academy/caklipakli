@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit posts</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1>Trending posts</h1>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <th>Score</th>
+        <th>Upvote</th>
+        <th>Downvote</th>
+        <th>Posts</th>
+        </thead>
+        <tbody class="table table-hover">
+        <tr th:each="post:${posts}">
+            <td th:text="${post.score}"></td>
+            <td th:href="+"></td>
+            <td th:href="-"></td>
+            <td th:text="${post.post}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
