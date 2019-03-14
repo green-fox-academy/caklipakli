@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class RedditPost {
+public class RedditPost{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -48,5 +48,4 @@ public class RedditPost {
     public Date getDate() {
         return date;
     }
-
 }

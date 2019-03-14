@@ -2,6 +2,7 @@ package com.greenfoxacademy.reddit.controler;
 
 import com.greenfoxacademy.reddit.model.RedditPost;
 import com.greenfoxacademy.reddit.repository.RedditPostRepository;
+import com.greenfoxacademy.reddit.service.RedditPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/reddit")
 public class RedditPostController {
 
-    private RedditPostRepository postRepository;
+    private RedditPostService service;
 
     @Autowired
-    public RedditPostController(RedditPostRepository postRepository){
-        this.postRepository = postRepository;
+    public RedditPostController(RedditPostService service){
+        this.service = service;
     }
 
     @RequestMapping(value={"/", "/list"})
     public String listPosts(Model model){
-        model.addAttribute("posts", postRepository.findAll());
+        model.addAttribute("posts", service.getPosts());
         return "index";
     }
 
@@ -36,13 +37,19 @@ public class RedditPostController {
 
     @RequestMapping(path="/add", method=RequestMethod.POST)
     public String redditAdd(@ModelAttribute(name="reddit") RedditPost post){
-        postRepository.save(post);
+        service.addPost(post);
         return "redirect:/reddit/list";
     }
 
-    @RequestMapping(path="/upvote/{id}", method = RequestMethod.GET)
-    public String upVoteReddit(@PathVariable "id", long id ){
-        postRepository.
+    @RequestMapping(path="/{id}/upvote", method = RequestMethod.GET)
+    public String upVoteReddit(@PathVariable("id") long id){
+        service.upVote(id);
+        return "redirect:/reddit/list";
+    }
+
+    @RequestMapping(path="/{id}/downvote", method = RequestMethod.GET)
+    public String downVoteReddit(@PathVariable("id") long id){
+        service.downVote(id);
         return "redirect:/reddit/list";
     }
 

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<h1>Trending posts</h1>
+<h1 class="text-center">Trending posts</h1>
 <div class="container">
     <table class="table table-striped">
         <thead>
@@ -20,13 +20,13 @@
         <tbody class="table table-hover">
         <tr th:each="post:${posts}">
             <td th:text="${post.score}"></td>
-            <td><a th:href="'/upvote/'+${post.id}">+</a></td>
-            <td>-</td>
+            <td><a th:href="'/reddit/'+${post.id}+'/upvote'">+</a></td>
+            <td><a th:href="'/reddit/'+${post.id}+'/downvote'">-</a></td>
             <td th:text="${post.post}"></td>
         </tr>
         </tbody>
     </table>
-    <h3><a th:href="@{/reddit/add}">Add new post</a></h3>
+    <h3><a th:href="@{/reddit/add}">Add a new post</a></h3>
 </div>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
