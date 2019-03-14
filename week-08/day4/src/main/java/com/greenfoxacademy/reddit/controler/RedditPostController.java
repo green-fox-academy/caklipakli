@@ -17,10 +17,10 @@ public class RedditPostController {
         this.postRepository = postRepository;
     }
 
+    @RequestMapping(value={"/", "/list"})
     public String listPosts(Model model){
-        model.addAttribute("post", postRepository.findAll());
+        model.addAttribute("posts", postRepository.findAll());
         return "index";
-
     }
 
 }
