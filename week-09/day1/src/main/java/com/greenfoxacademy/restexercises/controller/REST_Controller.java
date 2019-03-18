@@ -3,10 +3,8 @@ package com.greenfoxacademy.restexercises.controller;
 import com.greenfoxacademy.restexercises.model.Appended;
 import com.greenfoxacademy.restexercises.model.DoubleNumber;
 import com.greenfoxacademy.restexercises.model.ThisException;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.greenfoxacademy.restexercises.model.ThisNumber;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class REST_Controller {
@@ -47,5 +45,22 @@ public class REST_Controller {
     @RequestMapping("/appenda")
     public String appendaError(){
         return "404";
+    }
+
+    @RequestMapping(path="/dountil/{action}", method= RequestMethod.POST)
+    public Object doUntil(@PathVariable("action") String action, @RequestParam(value="until", required = false) Integer until) {
+        if (until.equals(null)) {
+            return new ThisException("Please provide a number!");
+        } else if (action.equals("sum")) {
+            ThisNumber number = new ThisNumber(until);
+            number.sum();
+            return number;
+        } else if (action.equals("factor")) {
+            ThisNumber number = new ThisNumber(until);
+            number.factor();
+            return number;
+        } else {
+            return new ThisException("No such an endpoint");
+        }
     }
 }

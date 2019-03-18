@@ -31,4 +31,5 @@ public class DoubleNumber {
     public void setResult(Integer result) {
         this.result = result;
     }
+
 }
