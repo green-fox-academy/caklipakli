@@ -1,18 +1,18 @@
 package com.greenfoxacademy.restexercises.controller;
 
 import com.greenfoxacademy.restexercises.model.*;
-import com.greenfoxacademy.restexercises.repository.LogRepository;
+import com.greenfoxacademy.restexercises.service.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class REST_Controller {
 
-    private LogRepository logRepository;
+    private LogService logService;
 
     @Autowired
-    public REST_Controller(LogRepository logRepository){
-        this.logRepository = logRepository;
+    public REST_Controller(LogService logService){
+        this.logService = logService;
     }
 
     @RequestMapping("/doubling")
@@ -77,4 +77,6 @@ public class REST_Controller {
         }
         return whatToDo;
     }
+
+
 }
