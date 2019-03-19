@@ -1,13 +1,19 @@
 package com.greenfoxacademy.restexercises.controller;
 
-import com.greenfoxacademy.restexercises.model.Appended;
-import com.greenfoxacademy.restexercises.model.DoubleNumber;
-import com.greenfoxacademy.restexercises.model.ThisException;
-import com.greenfoxacademy.restexercises.model.ThisNumber;
+import com.greenfoxacademy.restexercises.model.*;
+import com.greenfoxacademy.restexercises.repository.LogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class REST_Controller {
+
+    private LogRepository logRepository;
+
+    @Autowired
+    public REST_Controller(LogRepository logRepository){
+        this.logRepository = logRepository;
+    }
 
     @RequestMapping("/doubling")
     public Object doubling(@RequestParam(value = "input", required = false) Integer input){
@@ -60,5 +66,15 @@ public class REST_Controller {
         } else {
             return new ThisException("No such an endpoint");
         }
+    }
+
+    @RequestMapping(path="/arrays", method = RequestMethod.POST)
+    public Object arrayHandler(@RequestBody(required = false) ArrayHandler whatToDo){
+        if (whatToDo.getWhat().equals(null) || whatToDo.getNumbers().equals(null)){
+            return new ThisException("Please provide what to do with the numbers!");
+        } else {
+            whatToDo.setResult();
+        }
+        return whatToDo;
     }
 }
