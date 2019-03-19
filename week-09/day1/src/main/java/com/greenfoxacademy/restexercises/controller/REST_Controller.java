@@ -48,17 +48,15 @@ public class REST_Controller {
     }
 
     @RequestMapping(path="/dountil/{action}", method= RequestMethod.POST)
-    public Object doUntil(@PathVariable("action") String action, @RequestParam(value="until", required = false) Integer until) {
+    public Object doUntil(@PathVariable("action") String action, @RequestBody(required = false) ThisNumber until) {
         if (until.equals(null)) {
             return new ThisException("Please provide a number!");
         } else if (action.equals("sum")) {
-            ThisNumber number = new ThisNumber(until);
-            number.sum();
-            return number;
+            until.sum();
+            return until;
         } else if (action.equals("factor")) {
-            ThisNumber number = new ThisNumber(until);
-            number.factor();
-            return number;
+            until.factor();
+            return until;
         } else {
             return new ThisException("No such an endpoint");
         }
