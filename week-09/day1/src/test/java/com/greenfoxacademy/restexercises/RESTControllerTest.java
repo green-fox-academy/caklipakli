@@ -49,4 +49,20 @@ public class RESTControllerTest {
                 get("/greeter?name=Baba&title=Mr."))
                 .andExpect(jsonPath("$.welcome_message", is("Oh, hi there Baba, my dear Mr.!")));
     }
+
+    @Test
+    public void greeterNoTitle() throws Exception {
+
+        mockMvc.perform(
+                get("/greeter?name=Baba"))
+                .andExpect(jsonPath("$.error", is("Please provide a title!")));
+    }
+
+    @Test
+    public void appendIsAppending() throws Exception {
+
+        mockMvc.perform(
+                get("/appenda/{appendable}","kuty"))
+                .andExpect(jsonPath("$.appended", is("kutya")));
+    }
 }

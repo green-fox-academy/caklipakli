@@ -7,15 +7,15 @@ public class Appended {
 
     }
 
-    public Appended(String appended) {
-        this.appended = appended + "a";
+    public Appended(String append) {
+        this.appended = append + "a";
     }
 
     public String getAppended() {
         return appended;
     }
 
-    public void setAppended(String appended) {
-        this.appended = appended + "a";
+    public void setAppended(String append) {
+        this.appended = append + "a";
     }
 }
