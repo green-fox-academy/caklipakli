@@ -65,4 +65,22 @@ public class RESTControllerTest {
                 get("/appenda/{appendable}","kuty"))
                 .andExpect(jsonPath("$.appended", is("kutya")));
     }
+
+    @Test
+    public void appendWithoutParameter() throws Exception {
+
+        mockMvc.perform(
+                get("/appenda")
+                .content("{404}"));
+    }
+
+    @Test
+    public void doUntilSumFunction_isOK() throws Exception {
+
+        mockMvc.perform(
+                post("/dountil/{action}","sum")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"until\": 3}"))
+                .andExpect(jsonPath("$.result", is(6)));
+    }
 }
