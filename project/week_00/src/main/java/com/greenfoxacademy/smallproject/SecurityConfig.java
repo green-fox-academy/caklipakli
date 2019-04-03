@@ -14,7 +14,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception{
         authenticationMgr.inMemoryAuthentication()
-        .withUser("devUser").password("{noop}dev").authorities("ROLE_USER")
+        .withUser("user").password("{noop}password").authorities("ROLE_USER")
         .and()
         .withUser("adminuser").password("{noop}admin").authorities("ROLE_USER", "ROLE_ADMIN");
     }
@@ -26,13 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          .antMatchers("/protectedByUserRole").hasRole("USER")
          .antMatchers("/protectedByAdminRole").hasRole("ADMIN")
          .antMatchers("/","/notprotected").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .and()
-                .logout()
-                .permitAll();
+         .and()
+         .httpBasic();
     }
 }
