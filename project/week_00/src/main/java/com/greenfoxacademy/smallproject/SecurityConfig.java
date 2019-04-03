@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    public void congigureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception{
+    public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception{
         authenticationMgr.inMemoryAuthentication()
         .withUser("devUser").password("{noop}dev").authorities("ROLE_USER")
         .and()
@@ -26,7 +26,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          .antMatchers("/protectedByUserRole").hasRole("USER")
          .antMatchers("/protectedByAdminRole").hasRole("ADMIN")
          .antMatchers("/","/notprotected").permitAll()
-         .and()
-         .httpBasic();
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll();
     }
 }
