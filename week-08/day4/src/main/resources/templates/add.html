@@ -11,7 +11,9 @@
     <h3>Add a new post</h3>
     <div class = container>
         <form action="#" th:action="@{/reddit/add}" th:object="${reddit}" method="post">
-            <input type="text" id="title" name="title" th:field="*{post}" required>
+            <label for name="post">Post: </label>
+            <input type="text" id="post" name="post" th:field="*{post}" required>
+            <label for name="user">User: </label>
             <input type="text" id="user" name="user" th:field="*{user}" required>
             <input type="submit" class="btn btn-warning" value="Add"/>
         </form>

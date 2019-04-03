@@ -11,7 +11,7 @@ public class RedditPost{
     private String post;
     private long score;
     private Date date = new Date();
-    @OneToOne(cascade=CascadeType.ALL)
+    @ManyToOne (cascade = CascadeType.ALL)
     private User user;
 
     public RedditPost(){

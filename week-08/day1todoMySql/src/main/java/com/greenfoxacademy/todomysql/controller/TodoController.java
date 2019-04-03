@@ -53,7 +53,7 @@ import org.springframework.web.bind.annotation.*;
             return "edit";
         }
 
-        @RequestMapping(path ="/{id}/edit", method=RequestMethod.POST)
+        @RequestMapping(path ="/{id}/edit", method=RequestMethod.PUT)
         public String todoEdit(@ModelAttribute(name="todo") Todo todo) {
             repository.save(todo);
             return "redirect:/todo/list";

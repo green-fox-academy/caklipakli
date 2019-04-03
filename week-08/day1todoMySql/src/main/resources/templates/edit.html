@@ -9,7 +9,7 @@
 <body bgcolor="#dc143c">
     <div class="container">
     <h1 class="row">Edit todo</h1>
-    <form action="#" th:action="@{'/todo/' + ${id} + '/edit'}" th:object="${todo}" method="post">
+    <form action="#" th:action="@{'/todo/' + ${id} + '/edit'}" th:object="${todo}" th:method="put">
         <label for="title">Action: </label>
         <input type="text" id="title" name="title" th:field="*{title}" required>
         <input type="checkbox" id="urgent" name="urgent" th:field="*{urgent}">

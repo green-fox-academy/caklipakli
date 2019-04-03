@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -11,7 +12,7 @@ public class User {
     private long id;
     private String nick;
     private String emil;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     private List<RedditPost> posts;
 
     public User(){
@@ -28,6 +29,30 @@ public class User {
 
     public void setPosts(List<RedditPost> posts) {
         this.posts = posts;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
+    public String getEmil() {
+        return emil;
+    }
+
+    public void setEmil(String emil) {
+        this.emil = emil;
     }
 }
 
