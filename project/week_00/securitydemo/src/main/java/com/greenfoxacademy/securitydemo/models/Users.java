@@ -22,10 +22,20 @@ public class Users {
     @Column(name = "active")
     private String active;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name="user_role", joinColumns = @JoinColumn(name = "us"))
+    @JoinTable(name="user_role", joinColumns = @JoinColumn(name = "user_id"))
     private Set<Role> roles;
 
     public Users() {
+    }
+
+    public Users(Users users){
+        this.active = users.getActive();
+        this.email = users.getEmail();
+        this.roles = users.getRoles();
+        this.name = users.getName();
+        this.lastname = users.getLastname();
+        this.id = users.getId();
+        this.password = users.getPassword();
     }
 
     public int getId() {
