@@ -32,7 +32,7 @@ public class RESTController {
 
         @RequestMapping("/secured/list")
         public Object listUsers(){
-            return userService.getUsers();
+            return userService.getAllUsers();
         }
 
 

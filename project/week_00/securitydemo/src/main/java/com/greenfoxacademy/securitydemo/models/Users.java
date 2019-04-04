@@ -1,8 +1,9 @@
 package com.greenfoxacademy.securitydemo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Set;
 
 @Entity
 public class Users {
@@ -21,7 +22,9 @@ public class Users {
     private String lastname;
     @Column(name = "active")
     private String active;
-    @ManyToMany
+
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
@@ -96,7 +99,7 @@ public class Users {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Collection<Role> roles) {
         this.roles = roles;
     }
 }

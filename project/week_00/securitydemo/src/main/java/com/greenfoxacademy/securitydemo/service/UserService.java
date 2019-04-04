@@ -22,11 +22,9 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public List<Users> getUsers() {
-        List<Users> users = new ArrayList<>();
-        userRepository.findAll()
-                .forEach(users::add);
-        return users;
+    public Object getAllUsers() {
+
+        return this.userRepository.findAll();
     }
 
 
