@@ -18,8 +18,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
+
     private CustomUserDetailsService userDetailsService;
+
+    @Autowired
+    public SecurityConfiguration(CustomUserDetailsService userDetailsService){
+        this.userDetailsService = userDetailsService;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
@@ -48,7 +53,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
             @Override
             public boolean matches(CharSequence charSequence, String encodedPassword) {
-                return true;
+                return encode(charSequence).equals(encodedPassword);
             }
         };
     }

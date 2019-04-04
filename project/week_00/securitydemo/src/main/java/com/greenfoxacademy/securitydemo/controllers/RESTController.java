@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-@RestController("/rest")
+@RestController
 public class RESTController {
 
         @RequestMapping("/all")
