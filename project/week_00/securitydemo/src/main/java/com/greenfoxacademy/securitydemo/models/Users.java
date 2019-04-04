@@ -1,10 +1,10 @@
 package com.greenfoxacademy.securitydemo.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
 public class Users {
 
     @Id
@@ -21,9 +21,15 @@ public class Users {
     private String lastname;
     @Column(name = "active")
     private String active;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name="user_role", joinColumns = @JoinColumn(name = "user_id"))
-    private Set<Role> roles;
+    @ManyToMany
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "user_id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "role_id"))
+    private Collection<Role> roles;
+
 
     public Users() {
     }
@@ -86,7 +92,7 @@ public class Users {
         this.active = active;
     }
 
-    public Set<Role> getRoles() {
+    public Collection<Role> getRoles() {
         return roles;
     }
 

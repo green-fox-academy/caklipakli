@@ -29,8 +29,8 @@ public class RESTController {
             return "This is a secured Hello world";
         }
 
-        @PreAuthorize("hasAnyRole('ADMIN')")
-        @RequestMapping("/secured/all")
+
+        @RequestMapping("/secured/list")
         public Object listUsers(){
             return userService.getUsers();
         }
