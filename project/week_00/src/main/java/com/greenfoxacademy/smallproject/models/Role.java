@@ -15,8 +15,8 @@ public class Role {
     @Column(name = "role")
     private String role;
 
-    @ManyToMany(mappedBy = "roles")
-    private Collection<User> userCollection;
+    /*@ManyToMany(mappedBy = "roles")
+    private Collection<User> userCollection;*/
 
     public Role(){
 
@@ -26,8 +26,8 @@ public class Role {
         return roleId;
     }
 
-    public void setRoleId(int roleid) {
-        this.roleId = roleid;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public String getRole() {

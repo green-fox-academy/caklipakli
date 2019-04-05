@@ -16,7 +16,7 @@ public class User {
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "name")
+    /*@Column(name = "name")
     private String name;
     @Column(name = "lastname")
     private String lastname;
@@ -24,19 +24,19 @@ public class User {
     private String active;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name="user_role", joinColumns = @JoinColumn(name = "user_id"))
-    private Collection<Role> roles;
+    private Collection<Role> roles;*/
 
     public User() {
     }
 
     public User(User users){
-        this.active = users.getActive();
         this.email = users.getEmail();
-        this.roles = users.getRoles();
-        this.name = users.getName();
-        this.lastname = users.getLastname();
         this.id = users.getId();
         this.password = users.getPassword();
+        /*this.roles = users.getRoles();
+        this.name = users.getName();
+        this.lastname = users.getLastname();
+        this.active = users.getActive();*/
     }
 
     public int getId() {
@@ -62,7 +62,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
+/*
     public String getName() {
         return name;
     }
@@ -93,6 +93,6 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
+    }*/
 }
 
