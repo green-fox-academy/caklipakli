@@ -15,8 +15,8 @@ public class Role {
     @Column(name = "role")
     private String role;
 
-    /*@ManyToMany(mappedBy = "roles")
-    private Collection<User> userCollection;*/
+    @ManyToMany(mappedBy = "roles")
+    private Collection<User> userCollection;
 
     public Role(){
 

@@ -21,10 +21,10 @@ public class User {
     @Column(name = "lastname")
     private String lastname;
     @Column(name = "active")
-    private String active;
+    private String active;*/
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name="user_role", joinColumns = @JoinColumn(name = "user_id"))
-    private Collection<Role> roles;*/
+    private Collection<Role> roles;
 
     public User() {
     }
@@ -85,14 +85,14 @@ public class User {
 
     public void setActive(String active) {
         this.active = active;
-    }
+    }*/
 
     public Collection<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Collection<Role> roles) {
         this.roles = roles;
-    }*/
+    }
 }
 
