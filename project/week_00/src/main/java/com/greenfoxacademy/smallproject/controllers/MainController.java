@@ -13,11 +13,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/login")
-    public String loginPage(Model model){
-        return "login";
-    }
-
     @RequestMapping("/hi")
     public String getHi(){
         return "hi";

@@ -1,6 +1,7 @@
 package com.greenfoxacademy.smallproject.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "role")
@@ -13,6 +14,9 @@ public class Role {
 
     @Column(name = "role")
     private String role;
+
+    @ManyToMany(mappedBy = "roles")
+    private Collection<User> userCollection;
 
     public Role(){
 

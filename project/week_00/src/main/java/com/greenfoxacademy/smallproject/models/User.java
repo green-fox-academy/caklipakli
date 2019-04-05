@@ -1,6 +1,7 @@
 package com.greenfoxacademy.smallproject.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -21,9 +22,9 @@ public class User {
     private String lastname;
     @Column(name = "active")
     private String active;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name="user_role", joinColumns = @JoinColumn(name = "user_id"))
-    private Set<Role> roles;
+    private Collection<Role> roles;
 
     public User() {
     }
@@ -86,7 +87,7 @@ public class User {
         this.active = active;
     }
 
-    public Set<Role> getRoles() {
+    public Collection<Role> getRoles() {
         return roles;
     }
 
