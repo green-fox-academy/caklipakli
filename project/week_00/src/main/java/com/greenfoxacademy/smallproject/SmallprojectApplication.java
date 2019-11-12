@@ -1,5 +1,6 @@
 package com.greenfoxacademy.smallproject;
 
+import com.greenfoxacademy.smallproject.security.SecurityConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;

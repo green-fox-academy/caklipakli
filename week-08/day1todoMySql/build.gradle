@@ -1,9 +1,24 @@
+class ElevatorMusicPlugin implements Plugin<SoundProject> {
+
+    @Override
+    void apply(SoundProject soundProject) {
+
+        soundProject.task("play") {
+            doLast {
+                
+            }
+        }
+    }
+}
+
+
 plugins {
     id 'org.springframework.boot' version '2.1.3.RELEASE'
     id 'java'
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: ElevatorMusicPlugin
 
 group = 'com.greenfoxacademy'
 version = '0.0.1-SNAPSHOT'

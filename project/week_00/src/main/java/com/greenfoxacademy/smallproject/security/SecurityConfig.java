@@ -1,4 +1,4 @@
-package com.greenfoxacademy.smallproject;
+package com.greenfoxacademy.smallproject.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          .authorizeRequests()
          .antMatchers("/protectedByUserRole").hasRole("USER")
          .antMatchers("/protectedByAdminRole").hasRole("ADMIN")
+         .antMatchers("/users").hasRole("ADMIN")
          .antMatchers("/","/notprotected").permitAll()
          .and()
          .httpBasic();

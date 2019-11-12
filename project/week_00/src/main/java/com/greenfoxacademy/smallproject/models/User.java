@@ -26,7 +26,10 @@ public class User {
     @JoinTable(name="user_role", joinColumns = @JoinColumn(name = "user_id"))
     private Collection<Role> roles;
 
-    public User() {
+    public User(int i, String emil, String admin) {
+        this.email = emil;
+        this.id = i;
+        this.password = admin;
     }
 
     public User(User users){
